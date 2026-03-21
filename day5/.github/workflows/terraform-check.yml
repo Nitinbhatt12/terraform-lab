@@ -1,0 +1,55 @@
+name: Terraform CI
+
+on:
+  push:
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+
+    # Day1
+    - name: Day1 Init
+      run: cd day1 && terraform init
+
+    - name: Day1 Validate
+      run: cd day1 && terraform validate
+
+    - name: Day1 Plan
+      run: cd day1 && terraform plan
+
+    # Day2
+    - name: Day2 Init
+      run: cd day2 && terraform init
+
+    - name: Day2 Validate
+      run: cd day2 && terraform validate
+
+    - name: Day2 Plan
+      run: cd day2 && terraform plan
+
+    # Day3
+    - name: Day3 Init
+      run: cd day3 && terraform init
+
+    - name: Day3 Validate
+      run: cd day3 && terraform validate
+
+    - name: Day3 Plan
+      run: cd day3 && terraform plan
+
+    # Day4
+    - name: Day4 Init
+      run: cd day4 && terraform init
+
+    - name: Day4 Validate
+      run: cd day4 && terraform validate
+
+    - name: Day4 Plan
+      run: cd day4 && terraform plan
